@@ -33,7 +33,6 @@ section {
     height: 700px;
     position: relative;
     padding: 1%;
-    
 }
 
 h2 {
@@ -44,7 +43,7 @@ h2 {
     font-size: 1.3em;
 }
 
-#nameList {
+#btn {
     border-radius: 5px;
     border: none;
     background-color: #0759A5;
@@ -56,10 +55,13 @@ h2 {
     width: 25%;
 }
 
-#nameList::placeholder {
+#btn::placeholder {
     color:white;
 }
 
+#btn:hover {
+    background-color: #064987;
+}
 
 #nameListWhite {
     border-radius: 5px;
@@ -67,14 +69,16 @@ h2 {
     background-color:#FFF;
     color: #000;
     padding: 1em;
+    margin: 0.1em;
     outline: none;
     font-size: 0.9em;
     text-align: left;
-    width: 25%;
-    position: relative;
+    width: 98.5%;
+    display: block;
+
 }
 
-#btn {
+#save {
     border-radius: 3px;
     border: none;;
     background-color: #0cad34;
@@ -85,9 +89,11 @@ h2 {
     text-align: center;
     width: 40%;
     font-weight: bold;
+    margin-top: 0.2em;
+
 }
 
-#btn:hover {
+#save:hover {
     background-color: #078f27;
 }
 
@@ -101,7 +107,6 @@ h2 {
 }
 
 nav {
-    width: 60%;
     margin:0;
     text-align: left;
     background-color: rgb(209, 209, 209);
@@ -114,3 +119,6 @@ nav {
     color: #8f8f8f;
 }
 
+#form {
+    padding: 0;
+}
