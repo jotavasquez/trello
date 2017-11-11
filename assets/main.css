@@ -4,9 +4,9 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-
 body {
-    margin: 0 auto;
+    background-color: #0869C2;
+    margin: 0;
 }
 
 header {
@@ -19,7 +19,9 @@ header {
     font-size: 2em;
     font-weight: bold;
     padding: 1em% 35%;
+
 }
+
 img {
     padding: 0.3em 0 0.1em;
     height: 1.3em;
@@ -27,20 +29,12 @@ img {
 
 }
 
-section {
-    background-color: #0869C2;
-    width: 100%;
-    height: 700px;
-    position: relative;
-    padding: 1%;
-}
 
 h2 {
     color: #fff;
     width: 100%;
-    padding: 0;
-    margin: 0 0 0.5em 0;
     font-size: 1.3em;
+    margin: 0.8em 0.8em 0.4em 0.8em;
 }
 
 #btn {
@@ -52,7 +46,8 @@ h2 {
     outline: none;
     font-size: 0.9em;
     text-align: left;
-    width: 25%;
+    width: 100%;
+    margin:0%;
 }
 
 #btn::placeholder {
@@ -63,7 +58,7 @@ h2 {
     background-color: #064987;
 }
 
-#nameListWhite {
+#inputName {
     border-radius: 5px;
     border: none;
     background-color:#FFF;
@@ -75,44 +70,35 @@ h2 {
     text-align: left;
     width: 98.5%;
     display: block;
-
 }
 
-#save {
-    border-radius: 3px;
-    border: none;;
+#btnSaveName {
+    border-radius: 5px;
+    border: none;
     background-color: #0cad34;
     color:#FFF;
-    padding: 0.5em;
+    padding: 0.7em;
     outline: none;
     font-size: 0.9em;
     text-align: center;
-    width: 40%;
     font-weight: bold;
-    margin-top: 0.2em;
-
+    margin: 0.3em 0.3em 0;
+    width: 30%;
 }
 
-#save:hover {
+#btnSaveName:hover {
     background-color: #078f27;
 }
 
+/* habilita input */
 .enable-menu {
     margin:0;
 	display:block;
 }
 
+/* deshabilita input */
 .disable-menu {
 	display:none;
-}
-
-nav {
-    margin:0;
-    text-align: left;
-    background-color: rgb(209, 209, 209);
-    width: 25%;
-    border-radius: 3px;
-    padding: 0.2em;
 }
 
 .fa {
@@ -122,3 +108,40 @@ nav {
 #form {
     padding: 0;
 }
+
+.contenedor {
+    margin: 0.8em;
+    display: inline-block;
+    width: 20em;
+}
+
+#addListName, #saveListName {
+    border-radius: 5px;
+    border: none;
+    background-color:#E1E3E5;
+    height: auto;
+}
+
+#saveListName {
+    background-color:#E1E3E5;
+    height: auto;
+}
+
+h3 {
+    margin-left: 0.3em;
+    font-size: 1em;
+}
+
+#btnNewCard {
+    border: none;
+    font-size: 0.9em;
+    color: #757575;
+    margin-bottom: 0.3em;
+}
+
+#btnNewCard:hover {
+    text-decoration: underline;
+    color: #535353;
+
+}
+
