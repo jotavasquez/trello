@@ -35,8 +35,7 @@ h2 {
     margin: 0.8em 0.8em 0.4em 0.8em;
 }
 
-    button,
-#inputName,.textAreaCard, #btnSaveName {
+    button, #inputName,.textAreaCard, #btnSaveName {
     outline: none;
     border-radius: 5px;
     border: none;
