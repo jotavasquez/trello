@@ -86,25 +86,6 @@ button, #inputName, #textAreaCard, #btnSaveName, .newCards {
     background-color: #078f27;
 }
 
-/* habilita input */
-.enable-menu {
-    margin:0;
-	display:block;
-}
-
-/* deshabilita input */
-.disable-menu {
-	display:none;
-}
-
-.fa {
-    color: #8f8f8f;
-}
-
-#form {
-    padding: 0;
-}
-
 .contenedor {
     margin: 0.8em;
     display: inline-block;
@@ -154,6 +135,14 @@ p {
     font-size: 1em;
 }
 
-#xbutton {
-    background-color:#078f27 ;
+#xbuton {
+    background-color: rgb(238, 11, 11);
 }
+
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before {
+    color: #8f8f8f;
+    font-size: 1.5em;
+}
+

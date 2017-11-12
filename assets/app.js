@@ -1,9 +1,17 @@
-
-//llamo al elemento boton añadir lista
-var btn = document.getElementById("btn");
+//creo botton añadir lista
+var btn = document.createElement("button");
+//agrego nombre id al button
+btn.setAttribute('id', 'btn');
+//pongo texto al boton
+btn.innerHTML = "Añadir una Lista...";
 
 // tomo contenedor div
 var saveListName = document.getElementById("addListName");
+//pongo el boton en el div contenedor saveListName
+saveListName.appendChild(btn);
+
+//llamo al elemento boton añadir lista
+var btn = document.getElementById("btn");
 
 
 // asigno evento al boton agregar lista
@@ -25,14 +33,38 @@ btn.addEventListener('click', function () {
      //poner focus en el input
     document.getElementById("inputName").focus();
 
+
     //creo  boton guardar 
     var btnSaveName = document.createElement("button");
     //agrego nombre id al button
     btnSaveName.setAttribute('id','btnSaveName');
     //pongo texto al boton
     btnSaveName.innerHTML = "Guardar";
-    //pongo el boton en el div contenedor addListName
+    //pongo el boton en el div contenedor saveListName
     saveListName.appendChild(btnSaveName);
+
+    //creo boton x
+    var xButton = document.createElement("button");
+    //agrego nombre id al button
+    xButton.setAttribute('id', 'xButton');
+    //agrego elementos mediante innerHTML
+    xButton.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
+
+    //pongo el xboton en el div contenedor saveListName
+    saveListName.appendChild(xButton);
+
+    //llamo al x boton 
+    var btnXbutton = document.getElementById("xButton");
+
+    //activo función para xboton 
+    btnXbutton.addEventListener('click', function () {
+        console.log("botonX");
+        //pongo el btn en el div contenedor saveListName
+        saveListName.replaceChild(btn, inputName);
+        saveListName.replaceChild(btn, btnSaveName);
+        saveListName.replaceChild(btn, btnXbutton);
+        addListName.style.padding = "0";
+    })
 
     // asigno evento al boton guardar nombre de lista:
     var btnSaveName = document.getElementById("btnSaveName");
@@ -78,9 +110,10 @@ btn.addEventListener('click', function () {
             //pongo el boton en el div contenedor 
             saveListName.appendChild(btnNewCard);
             
-            //elimino input y boton guardar
+            //elimino input y boton guardar y x
             addListName.removeChild(inputName);
             addListName.removeChild(btnSaveName);
+            addListName.removeChild(btnXbutton);
 
             //asigno un evento al boton añadir una tarjeta
             var newCard = document.getElementById("btnNewCard");
@@ -114,25 +147,32 @@ btn.addEventListener('click', function () {
                      //agrego nombre id al button
                      addCardButton.setAttribute('id', 'addCardButton');
                      //pongo texto al boton
-                     addCardButton.innerHTML = "Añadir";
+                     addCardButton.textContent = "Añadir";
                      //pongo el boton en el div contenedor addListName
                      saveListName.appendChild(addCardButton);
-
-                    //creo boton x
-                    var xButton = document.createElement("button");
-                    //agrego nombre id al button
-                    xButton.setAttribute('id', 'xButton');
-                    //agrego elementos mediante innerHTML
-                   //pongo el xboton en el div contenedor addListName
-                   saveListName.appendChild(xButton);
 
                     //llamo al boton guardar nueva tarjeta 
                     var btnSaveNewCard = document.getElementById("addCardButton");
 
+                    //pongo el xboton en el div contenedor saveListName
+                    saveListName.appendChild(xButton);
+
+                    //llamo al x boton 
+                    var btnXbutton = document.getElementById("xButton");
+
+                    //activo función para xboton 
+                    btnXbutton.addEventListener('click', function () {
+                        console.log("botonX");
+                        //reemplazo elementos: 
+                        saveListName.replaceChild(btnNewCard, addCardButton);
+                        saveListName.replaceChild(btnNewCard, btnXbutton);
+                        saveListName.replaceChild(btnNewCard, divTextCard);
+                    })
+
                     //poner focus en el textArea
                     document.getElementById("textAreaCard").focus();
-
-                    //creo función para el boton
+                    
+                    //creo función para el boton guardar
                     btnSaveNewCard.addEventListener('click', function () {                            
                         //tomar texto del textarea
                         var textAreaCardValue = document.getElementById("textAreaCard").value;
@@ -159,22 +199,10 @@ btn.addEventListener('click', function () {
                         addListName.appendChild(divNewCards);
                         //poner arriba el texto de la nueva tarjeta
                         addListName.insertBefore(divNewCards, divTextCard);
-
-
-
-                        //saco el elemento boton guardar tarjeta 
-                        //addListName.removeChild(btnSaveNewCard);
-
                       })
-
-
                 });
-
         });
-
 });
-
-
 
 
 
