@@ -11,7 +11,7 @@ btn.addEventListener('click', function () {
     console.log("funciona el boton"); //probando funcionamiento
     //saco el elemento boton añadir lista 
     saveListName.removeChild(btn);
-    // agrego mpadding al div addListName
+    // agrego padding al div addListName
     addListName.style.padding = "0.3em";
 
     //creo un elemento input
@@ -86,6 +86,62 @@ btn.addEventListener('click', function () {
                 //funcion guardar nueva tarjeta
                 newCard.addEventListener('click', function () {
                 console.log("nueva tarjeta") //probando funcionamiento
+                    //saco el elemento boton añadir tarjeta 
+                    addListName.removeChild(newCard);
+                
+                    //creo un elemento textarea
+                    var textAreaCard = document.createElement("textarea");
+                    //pongo nombre id al textarea
+                    textAreaCard.setAttribute("class", "textAreaCard");
+
+                    //creo un div para guardar el textarea
+                    var divTextCard = document.createElement("div");
+
+                    //pongo el textarea en el div contenedor divTextCard
+                    divTextCard.appendChild(textAreaCard);
+                    //pongo divTexCard en el elemento padre addNewList
+                    addListName.appendChild(divTextCard);
+
+                    // creo el boton añadir
+                     var addCardButton = document.createElement("button");
+                     //agrego nombre id al button
+                     addCardButton.setAttribute('id', 'addCardButton');
+                     //pongo texto al boton
+                     addCardButton.innerHTML = "Añadir";
+                     //pongo el boton en el div contenedor addListName
+                     saveListName.appendChild(addCardButton);
+
+                    //llamo al boton guardar nueva tarjeta
+                    var btnSaveNewCard = document.getElementById("addCardButton");
+                    //creo función para el boton
+                    btnSaveNewCard.addEventListener('click', function () {
+                        console.log("nueva tarjeta boton verde"); //probando funcionamiento
+                        //tomar texto del textarea
+                        var textAreaCard = document.getElementsByClassName("textAreaCard").value;
+                        //limpiar el textarea 
+                        document.getElementsByClassName("textAreaCard").value = "";
+                        
+                        
+                        //creamos el div que contiene cada Tweet
+                        var divNewCards = document.createElement("div");
+                        //agregar clase al div
+                        divNewCards.setAttribute("class", "newCards");
+                        //creo los nodos de texto para guardar cada tarjeta
+                        var nodetextNewCards = document.createTextNode("textAreaCard");
+                        //creo el elemento p para los textos de la tarjeta
+                        var textPCard = document.createElement('p');
+                        console.log(nodetextNewCards + "probando"); //probando funcionamiento
+                        //poner nodo de texto como hijo del elemento p
+                        textPCard.appendChild(nodetextNewCards);
+                        //poner texPcard como hijo de divNewCards
+                        divNewCards.appendChild(textPCard);
+                        //poner divNewCards como hijo de addListName
+                        addListName.appendChild(divNewCards);
+
+
+                      })
+
+
                 });
 
         });

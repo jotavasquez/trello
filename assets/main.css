@@ -19,14 +19,12 @@ header {
     font-size: 2em;
     font-weight: bold;
     padding: 1em% 35%;
-
 }
 
 img {
     padding: 0.3em 0 0.1em;
     height: 1.3em;
     filter: opacity(0.5);
-
 }
 
 
@@ -37,13 +35,17 @@ h2 {
     margin: 0.8em 0.8em 0.4em 0.8em;
 }
 
-#btn {
+    button,
+#inputName,.textAreaCard, #btnSaveName {
+    outline: none;
     border-radius: 5px;
     border: none;
+}
+
+#btn {
     background-color: #0759A5;
     color:#FFF;
     padding: 1em;
-    outline: none;
     font-size: 0.9em;
     text-align: left;
     width: 100%;
@@ -59,22 +61,17 @@ h2 {
 }
 
 #inputName {
-    border-radius: 5px;
-    border: none;
     background-color:#FFF;
     color: #000;
     padding: 1em;
     margin: 0.1em;
-    outline: none;
     font-size: 0.9em;
     text-align: left;
     width: 98.5%;
     display: block;
 }
 
-#btnSaveName {
-    border-radius: 5px;
-    border: none;
+#btnSaveName, #addCardButton {
     background-color: #0cad34;
     color:#FFF;
     padding: 0.7em;
@@ -86,7 +83,7 @@ h2 {
     width: 30%;
 }
 
-#btnSaveName:hover {
+#btnSaveName:hover, #addCardButton:hover {
     background-color: #078f27;
 }
 
@@ -122,10 +119,6 @@ h2 {
     height: auto;
 }
 
-#saveListName {
-    background-color:#E1E3E5;
-    height: auto;
-}
 
 h3 {
     margin-left: 0.3em;
@@ -133,15 +126,17 @@ h3 {
 }
 
 #btnNewCard {
-    border: none;
     font-size: 0.9em;
     color: #757575;
     margin-bottom: 0.3em;
+    background-color: #E0E2E4;
 }
 
 #btnNewCard:hover {
     text-decoration: underline;
     color: #535353;
-
 }
 
+.textAreaCard {
+    width: 100%;
+}
