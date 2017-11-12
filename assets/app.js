@@ -22,6 +22,8 @@ btn.addEventListener('click', function () {
     inputName.setAttribute('placeholder', 'Añadir una Lista...');
     //pongo el input en el div contenedor addListName
     saveListName.appendChild(inputName);
+     //poner focus en el input
+    document.getElementById("inputName").focus();
 
     //creo  boton guardar 
     var btnSaveName = document.createElement("button");
@@ -86,17 +88,22 @@ btn.addEventListener('click', function () {
                 //funcion guardar nueva tarjeta
                 newCard.addEventListener('click', function () {
                 console.log("nueva tarjeta") //probando funcionamiento
+                
                     //saco el elemento boton añadir tarjeta 
                     addListName.removeChild(newCard);
                 
                     //creo un elemento textarea
                     var textAreaCard = document.createElement("textarea");
                     //pongo nombre id al textarea
-                    textAreaCard.setAttribute("class", "textAreaCard");
+                    textAreaCard.setAttribute("id", "textAreaCard");
+
 
                     //creo un div para guardar el textarea
                     var divTextCard = document.createElement("div");
-
+                    //agregar clase al div
+                    divTextCard.setAttribute("class", "newCards");
+                    //agregar id al div
+                    divTextCard.setAttribute("id", "divTextCard");
                     //pongo el textarea en el div contenedor divTextCard
                     divTextCard.appendChild(textAreaCard);
                     //pongo divTexCard en el elemento padre addNewList
@@ -111,33 +118,52 @@ btn.addEventListener('click', function () {
                      //pongo el boton en el div contenedor addListName
                      saveListName.appendChild(addCardButton);
 
+                    //creo boton x
+                    var xButton = document.createElement("button");
+                    //agrego nombre id al button
+                    xButton.setAttribute('id', 'xButton');
+                    //agrego elementos mediante innerHTML
+                   //pongo el xboton en el div contenedor addListName
+                   saveListName.appendChild(xButton);
+
                     //llamo al boton guardar nueva tarjeta 
                     var btnSaveNewCard = document.getElementById("addCardButton");
+
+                    //poner focus en el textArea
+                    document.getElementById("textAreaCard").focus();
+
                     //creo función para el boton
-                    btnSaveNewCard.addEventListener('click', function () {
-                        console.log("nueva tarjeta boton verde"); //probando funcionamiento
+                    btnSaveNewCard.addEventListener('click', function () {                            
                         //tomar texto del textarea
-                        var textAreaCard = document.getElementsByClassName("textAreaCard").value;
+                        var textAreaCardValue = document.getElementById("textAreaCard").value;
+                        console.log("textAreaCardValue " + textAreaCardValue); //probando funcionamiento
+
                         //limpiar el textarea 
-                        document.getElementsByClassName("textAreaCard").value = "";
-                        
-                        
-                        //creamos el div que contiene cada Tweet
+                        document.getElementById("textAreaCard").value = "";
+            
+                        //creamos el div que contiene cada tarjeta
                         var divNewCards = document.createElement("div");
                         //agregar clase al div
                         divNewCards.setAttribute("class", "newCards");
+
                         //creo los nodos de texto para guardar cada tarjeta
-                        var nodetextNewCards = document.createTextNode("textAreaCard");
+                        var nodetextNewCards = document.createTextNode(textAreaCardValue);
                         //creo el elemento p para los textos de la tarjeta
                         var textPCard = document.createElement('p');
-                        console.log(nodetextNewCards + "probando"); //probando funcionamiento
+                        
                         //poner nodo de texto como hijo del elemento p
                         textPCard.appendChild(nodetextNewCards);
                         //poner texPcard como hijo de divNewCards
                         divNewCards.appendChild(textPCard);
                         //poner divNewCards como hijo de addListName
                         addListName.appendChild(divNewCards);
+                        //poner arriba el texto de la nueva tarjeta
+                        addListName.insertBefore(divNewCards, divTextCard);
 
+
+
+                        //saco el elemento boton guardar tarjeta 
+                        //addListName.removeChild(btnSaveNewCard);
 
                       })
 

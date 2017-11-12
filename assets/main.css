@@ -35,7 +35,7 @@ h2 {
     margin: 0.8em 0.8em 0.4em 0.8em;
 }
 
-    button, #inputName,.textAreaCard, #btnSaveName {
+button, #inputName, #textAreaCard, #btnSaveName, .newCards {
     outline: none;
     border-radius: 5px;
     border: none;
@@ -136,6 +136,24 @@ h3 {
     color: #535353;
 }
 
-.textAreaCard {
+#textAreaCard {
     width: 100%;
+    font-size: 1em;
+    margin: 0;
+}
+
+.newCards {
+    background-color: #FFF;
+    padding: 0.5em;
+    margin: 0.5em 0 0.5em;
+    height: auto;
+}
+
+p {
+    margin:0;
+    font-size: 1em;
+}
+
+#xbutton {
+    background-color:#078f27 ;
 }
